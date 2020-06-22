@@ -1,15 +1,9 @@
-export default (req, res) => {
-  const feed = [
-    {
-      text:
-        "Wow not having to configure and transpile typescript is one of the best parts of next.js",
-      author: "john",
-    },
-    {
-      text:
-        "I'm a firm believer that dark mode should be a universal default on the web",
-      author: "jill",
-    },
-  ];
-  res.json(feed);
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
+
+export default async (req, res) => {
+  const tweets = await prisma.tweet.findMany({
+    orderBy: { createdAt: "desc" },
+  });
+  res.json(tweets);
 };
