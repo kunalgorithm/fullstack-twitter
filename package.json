@@ -11,9 +11,13 @@
   "dependencies": {
     "@prisma/client": "2.0.1",
     "antd": "^4.3.5",
+    "bcrypt": "^5.0.0",
+    "cookie": "^0.4.1",
+    "jsonwebtoken": "^8.5.1",
     "next": "^9.4.4",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "swr": "^0.2.3"
   },
   "devDependencies": {
     "@prisma/cli": "2.0.1",

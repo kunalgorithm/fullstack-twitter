@@ -4,7 +4,7 @@
 
 datasource sqlite {
   provider = "sqlite"
-  url      = "file:./dev.db"
+  url = "***"
 }
 
 generator client {
@@ -21,9 +21,7 @@ model User {
 }
 
 model Tweet {
-  id         Int      @id @default(autoincrement())
-  createdAt  DateTime @default(now())
-  text       String  
-  authorId   Int
-  author     User @relation(fields: [authorId], references:[id])
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  text     String   
 }
