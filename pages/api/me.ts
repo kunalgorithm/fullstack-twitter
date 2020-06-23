@@ -4,13 +4,11 @@ const prisma = new PrismaClient();
 
 export default async (req, res) => {
   const { token } = req.cookies;
-  let me;
 
   if (token) {
     try {
-      const { id, email } = jwt.verify(token, process.env.JWT_SECRET);
-      me = await prisma.user.findOne({ where: { id } });
-      console.log("me", me);
+      const { id, username } = jwt.verify(token, process.env.JWT_SECRET);
+      const me = await prisma.user.findOne({ where: { id } });
       res.json(me);
       return;
     } catch (error) {
@@ -19,7 +17,6 @@ export default async (req, res) => {
       return;
     }
   } else {
-    console.log("407 not authd");
-    res.json({ error: "not authorized" });
+    res.json({});
   }
 };

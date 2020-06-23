@@ -6,10 +6,11 @@ export default async (req, res) => {
     res.status(400).json({ error: "❌ Tweets cannot be empty " });
     return;
   }
-  const { text, author } = req.body;
+  const { text, username } = req.body;
 
-  const tweet = author
-    ? await prisma.tweet.create({ data: { text } })
-    : await prisma.tweet.create({ data: { text } });
+  const tweet = await prisma.tweet.create({
+    data: { text, author: { connect: { username } } },
+  });
+
   res.json(tweet);
 };
