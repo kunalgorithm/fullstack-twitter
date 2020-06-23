@@ -1,6 +1,6 @@
 import { Row, Col, Button, message } from "antd";
 import { useState } from "react";
-import useSWR, { mutate } from "swr";
+import { mutate } from "swr";
 export const Signup = ({}) => {
   const [username, setUsername] = useState("");
 

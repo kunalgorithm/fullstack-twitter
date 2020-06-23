@@ -1,11 +1,10 @@
 import { Row, Col, Button } from "antd";
 import { Signup } from "./Signup";
-
-import { fetcher } from "../util/fetcher";
-import useSWR, { mutate } from "swr";
+import { mutate } from "swr";
+import { useMe } from "../util/hooks";
 
 export const Profile = () => {
-  const { data: me, error } = useSWR("/api/me", fetcher);
+  const { me } = useMe();
   return (
     <Row>
       {me && me.username ? (
