@@ -1,4 +1,4 @@
-import { Card } from "antd";
+import { Card, Spin } from "antd";
 import { useFeed } from "./util/hooks";
 
 export const Feed = () => {
@@ -12,5 +12,7 @@ export const Feed = () => {
         </Card>
       ))}
     </>
-  ) : null;
+  ) : (
+    <Spin />
+  );
 };
