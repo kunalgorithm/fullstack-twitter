@@ -1,8 +1,8 @@
 import { Button, message } from "antd";
 import { mutate } from "swr";
-import { fetcher } from "../util/fetcher";
+import { fetcher } from "./util/fetcher";
 import { useState } from "react";
-import { useFeed, useMe } from "../util/hooks";
+import { useFeed, useMe } from "./util/hooks";
 
 export const CreateTweetForm = () => {
   const [input, setInput] = useState("");
@@ -29,7 +29,7 @@ export const CreateTweetForm = () => {
         setInput("");
       }}
     >
-      <input value={input} onChange={(e) => setInput(e.target.value)}></input>
+      <input value={input} onChange={(e) => setInput(e.target.value)} />
       <Button htmlType="submit">Tweet</Button>
     </form>
   );

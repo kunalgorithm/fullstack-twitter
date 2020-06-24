@@ -1,7 +1,7 @@
 import { Row, Col, Button } from "antd";
 import { Signup } from "./Signup";
 import { mutate } from "swr";
-import { useMe } from "../util/hooks";
+import { useMe } from "./util/hooks";
 
 export const Profile = () => {
   const { me } = useMe();

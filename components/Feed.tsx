@@ -1,5 +1,5 @@
 import { Card } from "antd";
-import { useFeed } from "../util/hooks";
+import { useFeed } from "./util/hooks";
 
 export const Feed = () => {
   const { feed } = useFeed();

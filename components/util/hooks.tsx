@@ -1,6 +1,6 @@
 import { Tweet, User } from "@prisma/client";
 import useSWR from "swr";
-import { fetcher } from "../util/fetcher";
+import { fetcher } from "./fetcher";
 
 export function useFeed() {
   const { data: feed }: { data?: (Tweet & { author: User })[] } = useSWR(
