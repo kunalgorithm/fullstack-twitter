@@ -2,8 +2,7 @@ node_modules
 .next
 dev.db
 prisma/dev.db
-# Created by https://www.toptal.com/developers/gitignore/api/node
-# Edit at https://www.toptal.com/developers/gitignore?templates=node
+prisma/migrations
 
 ### Node ###
 # Logs

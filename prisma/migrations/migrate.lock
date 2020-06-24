@@ -1,8 +1,0 @@
-# Prisma Migrate lockfile v1
-
-20200621151018-create-tweets
-20200621155712-turn-content---text
-20200621192625-add-user-model
-20200621205351-name----username
-20200623100407-remove-email-from-user-and-make-username-unique
-20200623102015-add-author-to-tweet
