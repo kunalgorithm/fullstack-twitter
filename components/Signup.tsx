@@ -1,6 +1,7 @@
 import { Row, Col, Button, message } from "antd";
 import { useState } from "react";
 import { mutate } from "swr";
+import { fetcher } from "./util/fetcher";
 export const Signup = ({}) => {
   const [username, setUsername] = useState("");
 
@@ -13,17 +14,14 @@ export const Signup = ({}) => {
         <form
           onSubmit={async (e) => {
             e.preventDefault();
-            const res = await fetch(
-              `http://localhost:3000/api/${login ? "login" : "signup"}`,
+            const { data, error } = await fetcher(
+              `/api/${login ? "login" : "signup"}`,
               {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ username, password }),
+                username,
+                password,
               }
             );
-            const { data, error } = await res.json();
+
             if (error) message.error(error);
             mutate("/api/me");
           }}
@@ -43,7 +41,9 @@ export const Signup = ({}) => {
           />
           <Button htmlType="submit">{login ? "Login" : "Sign up"}</Button>
           <div>
-            <a onClick={() => setLogin(true)}>Already a user? Log In</a>
+            <a onClick={() => setLogin(!login)}>
+              {login ? "New? Sign Up" : "Already a user? Log In"}
+            </a>
           </div>
         </form>
       </Col>

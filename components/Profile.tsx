@@ -2,6 +2,7 @@ import { Row, Col, Button } from "antd";
 import { Signup } from "./Signup";
 import { mutate } from "swr";
 import { useMe } from "./util/hooks";
+import { fetcher } from "./util/fetcher";
 
 export const Profile = () => {
   const { me } = useMe();
@@ -15,7 +16,7 @@ export const Profile = () => {
         <br />{" "}
         <Button
           onClick={async () => {
-            await fetch("http://localhost:3000/api/logout");
+            fetcher("/api/logout");
             mutate("/api/me");
           }}
         >

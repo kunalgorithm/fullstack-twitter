@@ -6,14 +6,9 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export default async (req, res) => {
-  console.log("signing up", req.body.username);
   const salt = bcrypt.genSaltSync();
   const { username, password } = req.body;
   let user = await prisma.user.findOne({ where: { username } });
-  if (user) {
-    res.json({ error: "A user with that username already exists. " });
-    return;
-  }
 
   try {
     user = await prisma.user.create({
@@ -23,10 +18,8 @@ export default async (req, res) => {
       },
     });
   } catch (error) {
-    throw new Error("A user with that username already exists");
-
-    console.log("⚠️ Error creating user -->  ", error);
-    res.json({ error: "A user with that username already exists. " });
+    res.json({ error: "A user with that username already exists 😮" });
+    return;
   }
   const token = jwt.sign(
     { username: user.username, id: user.id, time: new Date() },

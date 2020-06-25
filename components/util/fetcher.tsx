@@ -1,5 +1,5 @@
 export const fetcher = (url, data = undefined) =>
-  fetch("http://localhost:3000" + url, {
+  fetch(window.location.origin + url, {
     method: data ? "POST" : "GET",
     credentials: "include",
     headers: {

@@ -3,6 +3,7 @@ import { useFeed } from "./util/hooks";
 
 export const Feed = () => {
   const { feed } = useFeed();
+
   return feed ? (
     <>
       {feed.map((tweet, i) => (

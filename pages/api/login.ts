@@ -6,6 +6,7 @@ import cookie from "cookie";
 
 export default async (req, res) => {
   const { username, password } = req.body;
+
   const user = await prisma.user.findOne({
     where: { username },
   });
@@ -33,5 +34,6 @@ export default async (req, res) => {
     res.json(user);
   } else {
     res.json({ error: "Incorrect username or password 🙁" });
+    return;
   }
 };
