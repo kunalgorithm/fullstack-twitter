@@ -23,6 +23,8 @@ export default async (req, res) => {
       },
     });
   } catch (error) {
+    throw new Error("A user with that username already exists");
+
     console.log("⚠️ Error creating user -->  ", error);
     res.json({ error: "A user with that username already exists. " });
   }
