@@ -2,6 +2,8 @@
 
 This is the accompanying repository to [this blog post.](https://kunal.sh/posts/building-a-fullstack-twitter-clone)
 
+Check out the Demo app at https://fullstack-twitter.onrender.com/ 
+
 ## Deploy to Render
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/kunalgorithm/fullstack-twitter)
