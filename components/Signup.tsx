@@ -35,7 +35,7 @@ export const Signup = ({}) => {
             await mutate("/api/me");
           }}
         >
-          <Input.Group compact>
+          <div>
             <Input
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -49,7 +49,7 @@ export const Signup = ({}) => {
               type="password"
               placeholder="Password"
             />
-          </Input.Group>
+          </div>
           <div>
             <Button htmlType="submit" loading={loading}>
               {login ? "Login" : "Sign up"}
