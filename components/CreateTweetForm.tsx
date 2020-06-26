@@ -1,8 +1,9 @@
-import { Button, message } from "antd";
-import { mutate } from "swr";
-import { fetcher } from "./util/fetcher";
 import { useState } from "react";
+import { mutate } from "swr";
+
+import { fetcher } from "./util/fetcher";
 import { useFeed, useMe } from "./util/hooks";
+import { Button, message, Input, Row, Col } from "antd";
 
 export const CreateTweetForm = () => {
   const [input, setInput] = useState("");
@@ -21,16 +22,24 @@ export const CreateTweetForm = () => {
           message.error("You must be logged in to tweet.");
           return;
         }
+        mutate("/api/feed", [{ text: input, author: me }, ...feed], false);
         fetcher("/api/tweet/create", {
           text: input,
           username: me.username,
         });
-        mutate("/api/feed", [{ text: input, author: me }, ...feed]);
+
         setInput("");
       }}
     >
-      <input value={input} onChange={(e) => setInput(e.target.value)} />
-      <Button htmlType="submit">Tweet</Button>
+      <Row>
+        <Col>
+          <Input value={input} onChange={(e) => setInput(e.target.value)} />
+        </Col>
+
+        <Col>
+          <Button htmlType="submit">Tweet</Button>
+        </Col>
+      </Row>
     </form>
   );
 };

@@ -2,14 +2,12 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import cookie from "cookie";
 import { PrismaClient } from "@prisma/client";
-
 const prisma = new PrismaClient();
 
 export default async (req, res) => {
   const salt = bcrypt.genSaltSync();
   const { username, password } = req.body;
-  let user = await prisma.user.findOne({ where: { username } });
-
+  let user;
   try {
     user = await prisma.user.create({
       data: {

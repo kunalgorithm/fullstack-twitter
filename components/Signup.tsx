@@ -1,12 +1,12 @@
-import { Row, Col, Button, message } from "antd";
+import { Row, Col, Button, message, Input } from "antd";
 import { useState } from "react";
 import { mutate } from "swr";
 import { fetcher } from "./util/fetcher";
 export const Signup = ({}) => {
   const [username, setUsername] = useState("");
-
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
+  const [loading, setLoading] = useState(false);
   return (
     <Row>
       <Col>
@@ -14,6 +14,12 @@ export const Signup = ({}) => {
         <form
           onSubmit={async (e) => {
             e.preventDefault();
+            if (username.length === 0 || password.length === 0) {
+              message.error(
+                "Uh oh: you can't have a blank username or password."
+              );
+            }
+            setLoading(true);
             const { data, error } = await fetcher(
               `/api/${login ? "login" : "signup"}`,
               {
@@ -21,25 +27,34 @@ export const Signup = ({}) => {
                 password,
               }
             );
-
-            if (error) message.error(error);
-            mutate("/api/me");
+            if (error) {
+              message.error(error);
+              setLoading(false);
+              return;
+            }
+            await mutate("/api/me");
           }}
         >
-          <input
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            type="name"
-            placeholder="Username"
-          />
+          <Input.Group compact>
+            <Input
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              type="name"
+              placeholder="Username"
+            />
 
-          <input
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            placeholder="Password"
-          />
-          <Button htmlType="submit">{login ? "Login" : "Sign up"}</Button>
+            <Input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="Password"
+            />
+          </Input.Group>
+          <div>
+            <Button htmlType="submit" loading={loading}>
+              {login ? "Login" : "Sign up"}
+            </Button>
+          </div>
           <div>
             <a onClick={() => setLogin(!login)}>
               {login ? "New? Sign Up" : "Already a user? Log In"}
