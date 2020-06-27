@@ -1,5 +1,5 @@
 import { Row, Col, Button, message } from "antd";
-import { Signup } from "./Signup";
+import { SignupForm } from "./SignupForm";
 import { mutate } from "swr";
 import { useMe } from "./util/hooks";
 import { fetcher } from "./util/fetcher";
@@ -13,11 +13,11 @@ export const Profile = () => {
   return (
     <Row style={{ padding: "1.5rem" }}>
       {!me.username ? (
-        <Signup />
+        <SignupForm />
       ) : (
         <Col>
           Logged in as: <strong>{me.username}</strong>
-          <br />{" "}
+          <br />
           <Button
             loading={loading}
             onClick={async () => {

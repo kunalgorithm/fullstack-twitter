@@ -15,7 +15,7 @@ export const Feed = () => {
             <Button
               style={{ float: "right" }}
               danger
-              type="text"
+              type="dashed"
               onClick={async () => {
                 await fetcher("/api/tweet/delete", { id: tweet.id });
 

@@ -25,7 +25,6 @@ export const CreateTweetForm = () => {
         mutate("/api/feed", [{ text: input, author: me }, ...feed], false);
         fetcher("/api/tweet/create", {
           text: input,
-          username: me.username,
         });
 
         setInput("");

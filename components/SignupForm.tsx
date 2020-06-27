@@ -2,7 +2,7 @@ import { Row, Col, Button, message, Input } from "antd";
 import { useState } from "react";
 import { mutate } from "swr";
 import { fetcher } from "./util/fetcher";
-export const Signup = ({}) => {
+export const SignupForm = ({}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);

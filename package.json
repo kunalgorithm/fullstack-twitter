@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "migrate:save": "prisma migrate save --experimental",
+    "migrate:up": "prisma migrate up --experimental",
     "postinstall": "prisma generate",
     "dev": "next",
     "start": "next start",
-    "build": "next build",
-    "migrate:save": "prisma migrate save --experimental",
-    "migrate:up": "prisma migrate up --experimental"
+    "build": "next build"
   },
   "author": "Kunal Shah",
   "license": "ISC",

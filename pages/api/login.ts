@@ -16,7 +16,7 @@ export default async (req, res) => {
       { username: user.username, id: user.id, time: new Date() },
       process.env.JWT_SECRET,
       {
-        expiresIn: "12h",
+        expiresIn: "6h",
       }
     );
 

@@ -3,6 +3,7 @@ node_modules
 dev.db
 prisma/dev.db
 prisma/migrations
+.env
 
 ### Node ###
 # Logs
