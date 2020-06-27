@@ -1,13 +1,11 @@
-import { Row, Col, Button, message } from "antd";
+import { Row, Col } from "antd";
 import { SignupForm } from "./SignupForm";
-import { mutate } from "swr";
 import { useMe } from "./util/hooks";
-import { fetcher } from "./util/fetcher";
-import { useState } from "react";
+import { LogoutButton } from "./LogoutButton";
 
 export const Profile = () => {
   const { me } = useMe();
-  const [loading, setLoading] = useState(false);
+
   if (!me) return null;
 
   return (
@@ -18,21 +16,7 @@ export const Profile = () => {
         <Col>
           Logged in as: <strong>{me.username}</strong>
           <br />
-          <Button
-            loading={loading}
-            onClick={async () => {
-              setLoading(true);
-              const { data, error } = await fetcher("/api/logout");
-              if (error) {
-                message.error(error);
-                setLoading(false);
-                return;
-              }
-              await mutate("/api/me");
-            }}
-          >
-            Log Out
-          </Button>
+          <LogoutButton />
         </Col>
       )}
     </Row>

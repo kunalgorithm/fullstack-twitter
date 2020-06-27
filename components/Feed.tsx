@@ -1,7 +1,6 @@
-import { Card, Spin, Button } from "antd";
+import { Card, Spin } from "antd";
 import { useFeed, useMe } from "./util/hooks";
-import { mutate } from "swr";
-import { fetcher } from "./util/fetcher";
+import { DeleteTweetButton } from "./DeleteTweetButton";
 
 export const Feed = () => {
   const { feed } = useFeed();
@@ -11,22 +10,8 @@ export const Feed = () => {
     <>
       {feed.map((tweet, i) => (
         <Card key={i}>
-          {tweet.author.id === me.id && (
-            <Button
-              style={{ float: "right" }}
-              danger
-              type="dashed"
-              onClick={async () => {
-                await fetcher("/api/tweet/delete", { id: tweet.id });
-
-                await mutate(
-                  "/api/feed",
-                  feed.filter((t) => t.id !== tweet.id)
-                );
-              }}
-            >
-              x
-            </Button>
+          {me && tweet.author.id === me.id && (
+            <DeleteTweetButton tweet={tweet} feed={feed} />
           )}
           <h4>{tweet.text}</h4>
           <span>{tweet.author.username}</span>
