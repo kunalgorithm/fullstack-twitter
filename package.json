@@ -6,10 +6,11 @@
   "scripts": {
     "migrate:save": "prisma migrate save --experimental",
     "migrate:up": "prisma migrate up --experimental",
-    "postinstall": "prisma generate",
+    "postinstall": "yarn generate",
     "dev": "next",
     "start": "next start",
-    "build": "next build"
+    "build": "next build",
+    "generate": "prisma generate"
   },
   "author": "Kunal Shah",
   "license": "ISC",
