@@ -3,7 +3,7 @@
 
 datasource sqlite {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgres://fullstack_twitter_asol_user:SKldqETeX0psBARdB6rXv0zOJwI2OIDy@dpg-brqhcoh8vr20mhivdkog/fullstack_twitter_asol"
 }
 
 generator client {
