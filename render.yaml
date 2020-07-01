@@ -3,7 +3,7 @@ services:
     name: fullstack-twitter
     env: node
     healthCheckPath: /
-    buildCommand: yarn install && yarn build
+    buildCommand: yarn install && yarn generate && yarn build
     startCommand: yarn start
     envVars:
       - key: DATABASE_URL
@@ -11,6 +11,6 @@ services:
           name: fullstack-twitter
           property: connectionString
       - key: JWT_SECRET
-        generateValue: true       # will generate a base64-encoded 256-bit secret
+        generateValue: true # will generate a base64-encoded 256-bit secret
 databases:
   - name: fullstack-twitter
