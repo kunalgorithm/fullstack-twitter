@@ -1,6 +1,6 @@
 # Fullstack Twitter Clone
 
-This is the accompanying repository to [this blog post.](https://kunal.sh/posts/building-a-fullstack-twitter-clone)
+This is the accompanying repository to [this tutorial.](https://kunal.sh/posts/building-a-fullstack-twitter-clone)
 
 Check out the Demo app at https://fullstack-twitter.onrender.com/ 
 
@@ -25,7 +25,7 @@ Render should detect that you're deploying a next app and set the appropriate bu
 
 Build 
 ```
-yarn; yarn build
+yarn && yarn generate && yarn build
 ```
 
 Start
