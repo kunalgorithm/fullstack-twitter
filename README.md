@@ -4,6 +4,17 @@ This is the accompanying repository to [this tutorial.](https://kunal.sh/posts/b
 
 Check out the Demo app at https://fullstack-twitter.onrender.com/ 
 
+## Develop locally with SQLite 
+
+Currently, `schema.prisma` points to postgres and targets the `DATABASE_URL` environment variable. To use SQLite, like in the tutorial, change the `datasource` in `schema.prisma` to 
+
+```prisma
+datasource sqlite {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+```
+
 ## Deploy to Render
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/kunalgorithm/fullstack-twitter)
