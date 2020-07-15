@@ -1,8 +1,22 @@
 # Fullstack Twitter Clone
 
-This is the accompanying repository to [this tutorial.](https://kunal.sh/posts/building-a-fullstack-twitter-clone)
+This is the accompanying repository to [this tutorial.](https://kunal.sh/posts/building-a-fullstack-twitter-clone). Check out the Demo app at https://fullstack-twitter.onrender.com/.
 
-Check out the Demo app at https://fullstack-twitter.onrender.com/ 
+## Development
+
+Clone the repository then install dependencies
+
+```
+yarn
+```
+
+and run the development server
+
+```
+yarn dev
+```
+
+and visit [localhost:3000](http://localhost:3000).
 
 ## Develop locally with SQLite 
 
