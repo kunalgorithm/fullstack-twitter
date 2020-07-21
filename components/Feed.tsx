@@ -1,6 +1,6 @@
 import { Card, Spin } from "antd";
 import { useFeed, useMe } from "./util/hooks";
-import { DeleteTweetButton } from "./DeleteTweetButton";
+import { DeleteButton } from "./DeleteButton";
 
 export const Feed = () => {
   const { feed } = useFeed();
@@ -8,13 +8,11 @@ export const Feed = () => {
 
   return feed ? (
     <>
-      {feed.map((tweet, i) => (
+      {feed.map(({ id, author, text }, i) => (
         <Card key={i}>
-          {me && tweet.author.id === me.id && (
-            <DeleteTweetButton tweet={tweet} feed={feed} />
-          )}
-          <h4>{tweet.text}</h4>
-          <span>{tweet.author.username}</span>
+          {me && author.id === me.id && <DeleteButton id={id} feed={feed} />}
+          <h4>{text}</h4>
+          <span>{author.username}</span>
         </Card>
       ))}
     </>

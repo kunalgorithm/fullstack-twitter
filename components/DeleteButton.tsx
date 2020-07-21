@@ -2,16 +2,16 @@ import { Button } from "antd";
 import { mutate } from "swr";
 import { fetcher } from "./util/fetcher";
 
-export const DeleteTweetButton = ({ tweet, feed }) => (
+export const DeleteButton = ({ id, feed }) => (
   <Button
     style={{ float: "right" }}
     danger
     type="dashed"
     onClick={async () => {
-      await fetcher("/api/tweet/delete", { id: tweet.id });
+      await fetcher("/api/tweet/delete", { id });
       await mutate(
         "/api/feed",
-        feed.filter((t) => t.id !== tweet.id)
+        feed.filter((t) => t.id !== id)
       );
     }}
   >
