@@ -11,7 +11,9 @@ export default () => (
     <Col md={{ span: 6, offset: 2 }} xs={{ span: 12, offset: 2 }}>
       <Profile />
       <Divider />
-      <a href="">View Source on Github</a>
+      <a href="https://github.com/kunalgorithm/fullstack-twitter">
+        View Source on Github
+      </a>
     </Col>
     <Col md={{ span: 10 }} xs={{ span: 20, offset: 2 }}>
       <CreateTweetForm />
