@@ -1,4 +1,4 @@
-import { Col, Row } from "antd";
+import { Col, Row, Divider } from "antd";
 import { Feed } from "../components/Feed";
 import { Profile } from "../components/Profile";
 import { CreateTweetForm } from "../components/CreateTweetForm";
@@ -10,6 +10,8 @@ export default () => (
     </Head>
     <Col md={{ span: 6, offset: 2 }} xs={{ span: 12, offset: 2 }}>
       <Profile />
+      <Divider />
+      <a href="">View Source on Github</a>
     </Col>
     <Col md={{ span: 10 }} xs={{ span: 20, offset: 2 }}>
       <CreateTweetForm />

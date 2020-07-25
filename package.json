@@ -9,7 +9,9 @@
     "dev": "next",
     "start": "next start",
     "build": "next build",
-    "generate": "prisma generate"
+    "generate": "prisma generate",
+    "postinstall": "prisma generate",
+    "setup": "echo JWT_SECRET=appsecret123 >> .env; echo DATABASE_URL='file:./dev.db' >> prisma/.env "
   },
   "author": "Kunal Shah",
   "license": "ISC",
@@ -25,7 +27,7 @@
     "swr": "^0.2.3"
   },
   "devDependencies": {
-    "@prisma/cli": "^2.1.1",
+    "@prisma/cli": "^2.3.0",
     "@types/node": "^14.0.13",
     "@types/react": "^16.9.36",
     "typescript": "^3.9.5"
