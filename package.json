@@ -11,12 +11,13 @@
     "build": "next build",
     "generate": "prisma generate",
     "postinstall": "prisma generate",
+    "push": "prisma db push --preview-feature",
     "setup": "echo JWT_SECRET=appsecret123 >> .env; echo DATABASE_URL='file:./dev.db' >> prisma/.env "
   },
   "author": "Kunal Shah",
   "license": "ISC",
   "dependencies": {
-    "@prisma/client": "2.0.1",
+    "@prisma/client": "^2.12.1",
     "antd": "^4.3.5",
     "bcrypt": "^5.0.0",
     "cookie": "^0.4.1",
@@ -27,7 +28,7 @@
     "swr": "^0.2.3"
   },
   "devDependencies": {
-    "@prisma/cli": "^2.3.0",
+    "@prisma/cli": "^2.12.1",
     "@types/node": "^14.0.13",
     "@types/react": "^16.9.36",
     "typescript": "^3.9.5"
