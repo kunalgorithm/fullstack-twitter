@@ -3,7 +3,7 @@ import { Feed } from "../components/Feed";
 import { Profile } from "../components/Profile";
 import { CreateTweetForm } from "../components/CreateTweetForm";
 import Head from "next/head";
-export default () => (
+const Page = () => (
   <Row>
     <Head>
       <title>Fullstack Twitter Clone</title>
@@ -21,3 +21,4 @@ export default () => (
     </Col>
   </Row>
 );
+export default Page;
