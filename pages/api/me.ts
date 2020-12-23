@@ -7,7 +7,7 @@ export default async (req, res) => {
 
   if (token) {
     const { id, username } = jwt.verify(token, process.env.JWT_SECRET);
-    const me = await prisma.user.findOne({ where: { id } });
+    const me = await prisma.user.findUnique({ where: { id } });
     res.json(me);
   } else {
     res.json({});

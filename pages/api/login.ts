@@ -7,7 +7,7 @@ import cookie from "cookie";
 export default async (req, res) => {
   const { username, password } = req.body;
 
-  const user = await prisma.user.findOne({
+  const user = await prisma.user.findUnique({
     where: { username },
   });
 
