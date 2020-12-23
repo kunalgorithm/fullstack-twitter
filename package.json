@@ -4,14 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "migrate:save": "prisma migrate save --experimental",
-    "migrate:up": "prisma migrate up --experimental",
     "dev": "next",
     "start": "next start",
     "build": "next build",
     "generate": "prisma generate",
     "postinstall": "prisma generate",
-    "push": "prisma db push --preview-feature",
+    "migrate": "prisma migrate dev --preview-feature",
     "setup": "echo JWT_SECRET=appsecret123 >> .env; echo DATABASE_URL='file:./dev.db' >> prisma/.env "
   },
   "author": "Kunal Shah",
