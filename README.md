@@ -2,6 +2,8 @@
 
 This is the accompanying repository to [this tutorial.](https://kunal.sh/posts/building-a-fullstack-twitter-clone). Check out the Demo app at [fullstack-twitter-kunalgorithm.vercel.app](https://fullstack-twitter-kunalgorithm.vercel.app).
 
+> UPDATE: I've since moved the demo app deployment from Render to Vercel. The instructions below still work, however.
+
 ## Development
 
 Clone the repository then install dependencies
@@ -55,3 +57,19 @@ Start
 ```
 yarn start
 ```
+
+## Deploy to Vercel 
+
+1. Install the CLI 
+
+```
+npm i -g vc
+```
+
+2. Run the deployment command in the root directory 
+
+```
+vc
+```
+
+3. Set the environment variables for `DATABASE_URL` to the external string of your postgres instance, and `JWT_SECRET` to your super secret passphrase. 
