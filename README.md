@@ -1,6 +1,6 @@
 # Fullstack Twitter Clone
 
-This is the accompanying repository to [this tutorial.](https://kunal.sh/posts/building-a-fullstack-twitter-clone). Check out the Demo app at https://fullstack-twitter.onrender.com/.
+This is the accompanying repository to [this tutorial.](https://kunal.sh/posts/building-a-fullstack-twitter-clone). Check out the Demo app at [fullstack-twitter-kunalgorithm.vercel.app](https://fullstack-twitter-kunalgorithm.vercel.app).
 
 ## Development
 
