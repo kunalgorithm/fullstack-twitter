@@ -1,8 +1,10 @@
 # Fullstack Twitter Clone
 
-This is the accompanying repository to [this tutorial.](https://kunal.sh/posts/building-a-fullstack-twitter-clone). Check out the Demo app at [fullstack-twitter-kunalgorithm.vercel.app](https://fullstack-twitter-kunalgorithm.vercel.app).
 
-> UPDATE: I've since moved the demo app deployment from Render to Vercel. The instructions below still work, however.
+This is the accompanying repository to [this tutorial.](https://kunal.sh/posts/building-a-fullstack-twitter-clone), and has recently been updated to use a more modern tech stack. 
+- For the code accompanying the original tutorial, switch to the [`original-main`](https://github.com/kunalgorithm/fullstack-twitter/tree/original-main) branch. 
+- Check out the Demo app at [fullstack-twitter-kunalgorithm.vercel.app](https://fullstack-twitter-kunalgorithm.vercel.app).
+
 
 ## Development
 
